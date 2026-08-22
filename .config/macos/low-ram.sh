@@ -135,6 +135,10 @@ run defaults write NSGlobalDomain NSGlassDiffusionSetting -int 0
 
 log "→ Window management..."
 
+# Do not save or relaunch the open application set across login sessions.
+run defaults write com.apple.loginwindow TALLogoutSavesState -bool false
+run defaults write com.apple.loginwindow LoginwindowLaunchesRelaunchApps -bool false
+
 # Disable window resume so apps do not reopen previous window sets by default.
 run defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
 
