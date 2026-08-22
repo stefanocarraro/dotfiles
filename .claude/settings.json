@@ -102,6 +102,9 @@
   "skipDangerousModePermissionPrompt": true,
   "theme": "dark",
   "switchModelsOnFlag": false,
+  "skillOverrides": {
+    "uv": "name-only"
+  },
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
   "feedbackSurveyState": {
