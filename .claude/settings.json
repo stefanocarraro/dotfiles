@@ -102,6 +102,8 @@
   "skipDangerousModePermissionPrompt": true,
   "theme": "dark",
   "switchModelsOnFlag": false,
+  "inputNeededNotifEnabled": true,
+  "agentPushNotifEnabled": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754360713440
   },
