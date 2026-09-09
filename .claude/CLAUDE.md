@@ -136,7 +136,7 @@ Also add the Harper rule:
 
 # Debugging
 
-- Always find and fix the root cause — never a workaround or symptom patch, even when I seem to be in a hurry. Use the superpowers systematic-debugging skill.
+- Always find and fix the root cause — never a workaround or symptom patch, even when I seem to be in a hurry. 
 - Work from raw data. When I paste error logs, trace the actual error — don't guess, don't chase theories. If a bug report has no error output, ask for it.
 - When I point at existing code as a reference, study it and match its patterns — working code beats an English description as a spec.
 - If a fix fails twice: stop, re-read the whole relevant section top-down, and say where your mental model was wrong. If I say "step back" or "we're going in circles": drop everything, propose something fundamentally different.
@@ -165,7 +165,7 @@ Also add the Harper rule:
 - Sessions are disposable; artifacts are permanent. Progress lives in commits, plan docs, and specs — never only in conversation memory.
 - Long build sessions retire — after the 3rd compaction or a landed plan phase: commit, update the plan doc (state, next step, compaction count), then start fresh. Never resume indefinitely.
 - Session start in a repo with a plan doc: read it first; don't re-explore the tree.
-- Delegate implementation to subagents with clean contexts so the orchestrating session stays small — I highly prefer the superpowers subagent-driven-development skill.
+- Delegate implementation to subagents with clean contexts so the orchestrating session stays small — I highly prefer the subagent-driven-development skill.
 
 # Q&A
 

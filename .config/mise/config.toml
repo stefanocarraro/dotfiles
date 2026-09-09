@@ -1,11 +1,12 @@
 [settings]
 experimental = true
 idiomatic_version_file_enable_tools = ["python"]
+go_set_goroot = false
 
 [tools]
 usage = "latest"
 node = "latest"
-go = "1.26.5"
+go = "1.26.6"
 rust = "latest"
 claude = { version = "latest", bin = "claude", platforms = """
 [linux-arm64]
@@ -29,7 +30,6 @@ bun = "latest"
 zig = "latest"
 python = "latest"
 java = "26"
-codex = "0.144.1"
 
 [tasks."llm:generate_bundle"]
 description = 'Generate LLM bundle output file using repomix'

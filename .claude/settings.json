@@ -14,10 +14,14 @@
   },
   "attribution": {
     "commit": "",
-    "pr": ""
+    "pr": "",
+    "sessionUrl": false
   },
   "permissions": {
     "defaultMode": "dontAsk"
+  },
+  "skillOverrides": {
+    "uv": "name-only"
   },
   "hooks": {
     "Notification": [
@@ -102,9 +106,6 @@
   "skipDangerousModePermissionPrompt": true,
   "theme": "dark",
   "switchModelsOnFlag": false,
-  "skillOverrides": {
-    "uv": "name-only"
-  },
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
   "feedbackSurveyState": {
@@ -118,5 +119,5 @@
       "command": "pulse"
     }
   },
-  "agentPushNotifEnabled": true
+  "model": "claude-fable-5-1[1m]"
 }

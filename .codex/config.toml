@@ -1,7 +1,8 @@
 personality = "pragmatic"
-model = "gpt-5.6-sol"
+model = "gpt-6-astra"
 model_reasoning_effort = "high"
 notify = ["/Users/harper/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+approvals_reviewer = "user"
 
 [mcp_servers.context7]
 command = "npx"
@@ -26,29 +27,38 @@ args = ["mcp"]
 command = "pulse"
 args = ["mcp"]
 
+[mcp_servers.pulse.tools.search_journal]
+approval_mode = "approve"
+
 [mcp_servers.memo]
 command = "memo"
 args = ["mcp"]
 
 [mcp_servers.node_repl]
-command = "/Applications/Codex.app/Contents/Resources/node_repl"
-startup_timeout_sec = 120.0
+args = []
+command = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node_repl"
+startup_timeout_sec = 120
 
 [mcp_servers.node_repl.env]
-BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
-BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-CODEX_CLI_PATH = "/Applications/Codex.app/Contents/Resources/codex"
-CODEX_HOME = "/Users/harper/.codex"
-NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
-NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
-NODE_REPL_NODE_MODULE_DIRS = ""
-NODE_REPL_NODE_PATH = "/Applications/Codex.app/Contents/Resources/node"
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "0b0d41e7a14a4903d2f95b0b3f427ed796b12c8edca2fa392a03df43997075ae"
-NODE_REPL_TRUSTED_CODE_PATHS = "/Users/harper/.codex"
+NODE_REPL_NODE_MODULE_DIRS = "/Applications/Codex.app/Contents/Resources/cua_node/lib/node_modules"
+NODE_REPL_NODE_PATH = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/harper/.codex:/Applications/Codex.app/Contents/Resources/cua_node/lib/node_modules"
+CODEX_HOME = "/Users/harper/.codex"
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+BROWSER_USE_TINYSKY_ENABLED = "1"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = ""
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = ""
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.901.22334"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/harper/.codex/plugins/cache/openai-bundled/browser/26.901.22334/scripts/browser-service.mjs"}'
+CODEX_CLI_PATH = "/Applications/Codex.app/Contents/Resources/codex"
 
 [mcp_servers.openaiDeveloperDocs]
 url = "https://developers.openai.com/mcp"
+
+[notice]
+hide_rate_limit_model_nudge = true
 
 [notice.model_migrations]
 "gpt-5.3-codex" = "gpt-5.4"
@@ -74,18 +84,33 @@ enabled = true
 [plugins."presentations@openai-primary-runtime"]
 enabled = true
 
+[plugins."superpowers@openai-curated"]
+enabled = true
+
 [plugins."browser@openai-bundled"]
 enabled = true
 
-[plugins."superpowers@openai-curated"]
+[plugins."codex-app-tools@openai-bundled"]
 enabled = true
+
+[plugins."sites@openai-bundled"]
+enabled = true
+
+[plugins."unified-computer-use@openai-bundled"]
+enabled = true
+
+[plugins."visualize@openai-bundled"]
+enabled = true
+
+[tui]
+status_line = ["model-with-reasoning", "git-branch", "context-remaining", "five-hour-limit", "weekly-limit", "used-tokens"]
 
 [tui.model_availability_nux]
 "gpt-5.5" = 4
 "gpt-5.6-sol" = 4
+gpt-6-astra = 4
 
 [marketplaces.openai-bundled]
-last_updated = "2026-05-29T21:14:15Z"
 source_type = "local"
 source = "/Users/harper/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
@@ -114,7 +139,7 @@ trusted_hash = "sha256:af787c6c24fb93f49ec22848939ea0625b96e186ab31eafcaccc64a39
 trusted_hash = "sha256:0904468b685b60d4f2dc73da0f356f1f3fccd1161f277813f8780a2641aeeea9"
 
 [hooks.state."/Users/harper/.codex/hooks.json:session_start:1:0"]
-trusted_hash = "sha256:abe8732863af57591845a56ceb2fb40e6cd9a4803e76dcd3867a715940bf6802"
+trusted_hash = "sha256:7b3de0102c38701200e185837043b2268cd10afeab2fc5c3fc495c6799fe4209"
 
 [projects."/Users/harper/Public/src/personal/crm"]
 trust_level = "trusted"
@@ -200,3 +225,143 @@ trust_level = "trusted"
 [projects."/Users/harper/Public/src/personal/weather-dashboard"]
 trust_level = "trusted"
 
+[projects."/Users/harper/Public/src/2389/jobboard"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/ai-detect"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/personal/suite/pulse"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/personal/suite/crm"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/patterns"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/personal/gentex-places-ha"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/2389-ai-enablement-one-pager"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/personal/harperreed/zine-poster"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/archive"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/reachy-openai-realtime"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/granola-obsidian-sync"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/personal/orbit"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/gossip"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/claude-plugins"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/portal"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/kola"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/pact"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/svg-animation"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/catalog"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/skymall"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/office"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/minicomputer"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/hass"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/unifi-manager"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/multipass"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/vertical-sign"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/vertical-alert"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/aiproxy-kola"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/break-away"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/observatory"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/smorgboard"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/people-present"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/sonos"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/ai-marketing"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/circus"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/kents-world"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/driving-vw-sa"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/hoa"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/ultramancity"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/tokyo-kart"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/observatory-v2"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/personal/radio-free-home"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Desktop/2389/Grainger/Spec"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/personal/address-collector-go"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/2389/mmwave-test"]
+trust_level = "trusted"
+
+[projects."/Users/harper/Public/src/personal/contacts"]
+trust_level = "trusted"
+
+[desktop]
+followUpQueueMode = "queue"
